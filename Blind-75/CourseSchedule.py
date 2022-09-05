@@ -25,7 +25,7 @@ class Solution:
             # we know now that from this course, every course can be taken. There is no need to redo work if this node is visited again, so just set no prereqs to the course so it is automatically going to return true in future dfs calls. 
             hashMap[course] = []
             return True
-        # the graph can be connected. Therefore, we have to ensure that we are preforming dfs on every node.
+        # the graph can be unconnected. Therefore, we have to ensure that we visiting every node by preforming dfs on every course.
         for i in range(numCourses):
             if dfs(i) == False:
                 return False
