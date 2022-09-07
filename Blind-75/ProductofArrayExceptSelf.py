@@ -7,10 +7,13 @@ class Solution:
         # we want store the prefix of each number in nums. The first element of nums would just have a prefix of 1. 
         for i in range(len(nums)):
             ans[i] = prefix
+            # update the prefix for the next element by multipying it by the current element in nums
             prefix *= nums[i]
         # now we are doing the postfix. The last element of nums has a postfix of 1, so it stays the same. Update postfix as you loop through the output array
         for j in range(len(nums) - 1, -1 , -1):
+            # postfix * the prefix stored in the previous loop
             ans[j] *= postfix
+            # update postfix as you iterate through the ans array
             postfix *= nums[j] 
         return ans
             
