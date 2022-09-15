@@ -12,7 +12,7 @@ class Solution:
         
         # lets say we have [1 1 0]. While at 0, dp[2] will = 0. While at dp[1], dp[1] will equal d[1+1] which is dp[2] = 0. 
         # BUT since we can make the combination of 1 and 0 (10) we can add dp[1] to dp[3] which is initialized to 1 from the first statement in this soln
-        # so now dp[1] = 1, but why? Thats because 0 can never stand alone. We HAVE to make 10 because 0 prohibits it.
+        # so now dp[1] = 1, but why? Thats because 0 can never stand alone. We HAVE to make 10 because [1, 0] is not a valid combination
         # now we go to dp[0]. dp[0] will get set to dp[1] = 1. But since dp[0] + dp[1] makes 11, which is valid, we can add dp[2] to dp[0]
         # but wait, dp[2] is 0, so dp[0] remains equal to 1
         # but this makes sense. If we just look at [110], we cant do [1, 1, 0], because 0 stands alone
