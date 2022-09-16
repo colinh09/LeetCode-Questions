@@ -1,8 +1,5 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        # kinda want to use a bottom up approach
-        # want to use a 2D array for this problem
-        
         # my general theory for this problem is that for every entry in the 2D array, I want dp[m][n] = dp[m-1][n] + dp[m][n-1]
         # EXCEPT for the case where m=1 or n=1 (in that case it's just going to be set to 1)
         # I proved it to myself on paper that this will work for both the examples given in the problem. dp[m-1][n-1] will contain the answer
