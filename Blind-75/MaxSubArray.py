@@ -43,11 +43,12 @@ class Solution:
             # middle + best right sum + best left sum
             best_combined_sum = nums[mid] + best_left_sum + best_right_sum
 
-            # Find the best subarray possible from both halves.
+            # recursively call the function in case there is a better sum in either of the halves of num
+            # this actually answers my question about the unintuitiveness of this solution. I think leetcode fails to explain these recursive calls.
             left_half = findBestSubarray(nums, left, mid - 1)
             right_half = findBestSubarray(nums, mid + 1, right)
 
-            # The largest of the 3 is the answer for any given input array.
+            # returns the highest value
             return max(best_combined_sum, left_half, right_half)
         
         # Our helper function is designed to solve this problem for
